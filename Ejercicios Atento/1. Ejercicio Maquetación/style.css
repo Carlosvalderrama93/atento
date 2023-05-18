@@ -1,48 +1,60 @@
+/*Estilos aplicables a todos los tamaños de pantalla*/
 body {
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
   margin: 10px;
 }
 
-article {
-  border: black solid 1px;
-  height: 150px;
-  width: 50%;
+.father {
+  border: black solid 2px;
   padding: 10px 5px;
   display: flex;
-  justify-content: space-between;
-  align-items: baseline;
   box-sizing: border-box;
-}
-
-.header {
-  border: black solid 1px;
-  height: 75px;
-  width: 100%;
-  margin-bottom: 10px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
 }
 
 .container {
   display: flex;
-  width: 100%;
   gap: 20px;
 }
 
-.children {
-  border: black solid 1px;
-  height: 40px;
-  width: 40px;
+.childs {
+  border: black solid 2px;
+  min-height: 40px;
+  min-width: 40px;
 }
 
-#center {
+#father-1 {
+  height: 75px;
+  margin-bottom: 10px;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#father-2 {
+  height: 150px;
   justify-content: center;
   align-items: center;
+  flex-grow: 1;
+}
+#father-3 {
+  height: 150px;
+  flex-grow: 2;
+  justify-content: space-between;
+  align-items: baseline;
 }
 
 #last-child {
   align-self: end;
+}
+
+
+/*Estilos aplicables a tamaño de pantalla especifico para RESPONSIVE DESING*/
+@media (max-width: 250px) {
+  .container {
+    flex-direction: column;
+  }
+
+  #father-1 {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
 }
