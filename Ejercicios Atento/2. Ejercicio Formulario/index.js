@@ -2,25 +2,24 @@ const form = document.querySelector("#form");
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  const data = getData();
-  printData(data);
+
+  const formData = new FormData(form);
+  const correo = formData.get("correo").trim();
+  const nombre = formData.get("nombre").trim();
+  const apellidos = formData.get("apellidos").trim();
+  let error = "";
+  let message = `Hola ${nombre} ${apellidos} te haz registrado con el correo ${correo}`;
+
+  for (const [name, value] of formData.entries()) {
+    if (value.trim() === "") {
+      error += `${name} `;
+    }
+  }
+  if (error) {
+    message = `Estos datos han sido mal ingresados: ${error}. por favor ingresarlos nuevamente`;
+  } else {
+    form.reset();
+  }
+
+  alert(message);
 });
-
-function getData() {
-  const correo = document.querySelector("#correo").value;
-  const nombre = document.querySelector("#nombre").value;
-  const apellidos = document.querySelector("#apellidos").value;
-  const data = {
-    correo,
-    nombre,
-    apellidos,
-  };
-
-  return data;
-}
-
-function printData(data) {
-  alert(
-    `Hola ${data.nombre} ${data.apellidos} te haz registrado con el correo ${data.correo}`
-  );
-}
