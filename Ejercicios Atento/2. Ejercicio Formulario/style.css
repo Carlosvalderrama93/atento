@@ -1,32 +1,8 @@
-@media (max-width: 250px) {
-  form {
-    padding: 10px;
-  }
-  .buttons-container {
-    margin-top: 10px;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-  }
-
-  button {
-    width: 100%;
-  }
-
-  input {
-    width: 100%;
-    box-sizing: border-box;
-  }
-}
-
-@media (min-width: 251px) {
-}
-
+/*Estilos generales a todos los tamaños de pantalla*/
 form {
   display: flex;
   flex-direction: column;
   border: solid #a2b6c9 1px;
-
   max-width: 450px;
   margin: auto;
   padding: 25px 10px;
@@ -56,3 +32,27 @@ button {
   color: white;
   font-size: 16px;
 }
+
+@media (max-width: 250px) {
+  form {
+    padding: 10px;
+  }
+  .buttons-container {
+    margin-top: 10px;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  input {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+
+  
