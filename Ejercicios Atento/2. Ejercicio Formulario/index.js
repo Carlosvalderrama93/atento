@@ -8,7 +8,7 @@ form.addEventListener("submit", (e) => {
   const nombre = formData.get("nombre").trim();
   const apellidos = formData.get("apellidos").trim();
   let error = "";
-  let message = `Hola ${nombre} ${apellidos} te haz registrado con el correo ${correo}`;
+  let message = `Hola ${nombre} ${apellidos}, te has registrado con el correo ${correo}`;
 
   for (const [name, value] of formData.entries()) {
     if (value.trim() === "") {
